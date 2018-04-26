@@ -188,7 +188,7 @@ public class GifImageView extends ImageView implements Runnable {
                 if( currentFrame+1 >= frames && onLastFramePlayedListener != null ) {
                     onLastFramePlayedListener.onLastFramePlayed();
                 }
-            } catch (final InterruptedException e) {
+            } catch (final Exception e) {
                 // suppress exception
             }
         } while (animating);
