@@ -152,7 +152,11 @@ public class GifImageView extends ImageView implements Runnable {
             if (!animating && !renderFrame) {
                 break;
             }
-            boolean advance = gifDecoder.advance();
+            boolean advance = false;
+            try {
+                advance = gifDecoder.advance();
+            } catch( Exception e ) {
+            }
 
             //milliseconds spent on frame decode
             long frameDecodeTime = 0;
