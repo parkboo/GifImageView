@@ -168,7 +168,7 @@ public class GifImageView extends ImageView implements Runnable {
                 }
                 frameDecodeTime = (System.nanoTime() - before) / 1000000;
                 handler.post(updateResults);
-            } catch (final ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
+            } catch (final Exception e) {
                 Log.w(TAG, e);
             }
 
